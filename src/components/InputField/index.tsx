@@ -10,13 +10,14 @@ interface Props {
 
 const InputField: React.FC<Props> = (props: Props) => {
   const { toDo, setToDo, handleAddTask } = props;
-  //8
+  
   const inputRef = useRef<HTMLInputElement>(null)
  
   return (
     <form className="input" onSubmit={(e)=>{
       handleAddTask(e)
-      inputRef.current?.blur() //9.return initial background-color when cursor out of input
+      inputRef.current?.blur() 
+      //return initial background-color when cursor out of input
 
     }}>
       <input

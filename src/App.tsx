@@ -8,7 +8,6 @@ import { Todo } from "./models/model";
 const App: React.FC = () => {
   const [toDo, setToDo] = useState<string>("");
   const [toDos, setToDos] = useState<Todo[]>([]);
-  //18:complete task
   const [completeTasks, setCompleteTasks] = useState<Todo[]>([]);
 
   //add task:

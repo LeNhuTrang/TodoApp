@@ -39,7 +39,7 @@ const App: React.FC = () => {
     let chosenTask;
     let activeTasks = toDos;
     let doneTasks = completeTasks;
-    //remove a chosen task from list:
+    //drag a chosen task from list:
     if (source.droppableId === "TodoList") {
       chosenTask = activeTasks[source.index];
       activeTasks.splice(source.index, 1);
@@ -47,16 +47,15 @@ const App: React.FC = () => {
       chosenTask = completeTasks[source.index];
       doneTasks.splice(source.index, 1);
     }
-    //add a chosen task to a new destination
+    //drop a chosen task into a new destination
     if (destination.droppableId === "TodoList") {
       activeTasks.splice(destination.index, 0, chosenTask);
     } else {
       doneTasks.splice(destination.index, 0, chosenTask);
     }
-    //
-    setToDos(activeTasks)
-    setCompleteTasks(doneTasks)
 
+    setToDos(activeTasks);
+    setCompleteTasks(doneTasks);
   };
 
   return (
